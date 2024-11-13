@@ -1,0 +1,17 @@
+.hoverImg {
+  width: 250px;
+  height: 250px;
+}
+
+@media screen and (max-width: 1284px) {
+  .hoverImg {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 1133px) {
+  .hoverImg {
+    width: 150px;
+    height: 150px;
+  }
+}

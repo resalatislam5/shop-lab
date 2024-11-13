@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 // Import roboto font
+import CustomTheme from "@/components/theme";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Box, CssBaseline } from "@mui/material";
+import Header from "@/components/shared/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,11 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {/* Remove default css style */}
-        <CssBaseline />
-        <main>
-          <Box height={"100vh"}>{children}</Box>
-        </main>
+        <CustomTheme>
+          {/* Remove default css style */}
+          <CssBaseline />
+          <main>
+            <Header />
+            <Box height={"100vh"}>{children}</Box>
+          </main>
+        </CustomTheme>
       </body>
     </html>
   );
